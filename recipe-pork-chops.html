@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmesan Crusted Pork Chops | Taylor's Food Adventures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--purple-darkest:#2D0057;--purple-dark:#4B0096;--purple-main:#7B00D4;--purple-bright:#9B30FF;--purple-light:#C47FFF;--purple-pale:#EDD6FF;--white:#FFFFFF;--text-light:#F5E6FF}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Nunito',sans-serif;background:var(--purple-darkest);color:var(--white);min-height:100vh;overflow-x:hidden}
+  nav{background:var(--purple-darkest);border-bottom:2px solid var(--purple-dark);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px}
+  .nav-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:8px}
+  .nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+  .nav-links a{font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;color:var(--purple-pale);text-decoration:none;padding:6px 14px;border-radius:99px;border:1.5px solid var(--purple-dark);transition:all 0.2s}
+  .nav-links a:hover,.nav-links a.active{background:var(--purple-bright);border-color:var(--purple-bright);color:var(--white)}
+  .recipe-hero{background:var(--purple-main);padding:48px 24px 40px;text-align:center;position:relative;overflow:hidden}
+  .recipe-hero::before{content:'';position:absolute;top:-60px;left:-60px;width:260px;height:260px;background:var(--purple-bright);border-radius:50%;opacity:0.15}
+  .recipe-hero::after{content:'';position:absolute;bottom:-80px;right:-40px;width:300px;height:300px;background:var(--purple-dark);border-radius:50%;opacity:0.25}
+  .recipe-hero-inner{position:relative;z-index:1;max-width:700px;margin:0 auto}
+  .recipe-badge{display:inline-block;background:var(--purple-bright);color:var(--white);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 16px;border-radius:99px;margin-bottom:16px}
+  .recipe-hero h1{font-family:'Fredoka',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:600;color:var(--white);line-height:1.2;margin-bottom:10px}
+  .recipe-hero .subtitle{font-size:15px;color:var(--purple-pale);margin-bottom:24px}
+  .recipe-meta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .meta-pill{background:var(--purple-dark);border:1.5px solid var(--purple-bright);border-radius:99px;padding:7px 18px;font-size:13px;font-weight:700;color:var(--purple-pale)}
+  .recipe-wrap{max-width:860px;margin:40px auto 64px;padding:0 24px;display:grid;grid-template-columns:1fr 2fr;gap:28px}
+  .ingredients-card{background:var(--purple-dark);border:2px solid var(--purple-bright);border-radius:20px;padding:28px;height:fit-content;position:sticky;top:80px}
+  .card-title{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+  .ingredient-list{list-style:none}
+  .ingredient-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--purple-main);font-size:14px;color:var(--text-light);line-height:1.4}
+  .ingredient-item:last-child{border-bottom:none}
+  .ingredient-item::before{content:'💜';font-size:12px;margin-top:2px;flex-shrink:0}
+  .optional-tag{font-size:11px;color:var(--purple-light);font-weight:700;margin-left:4px}
+  .steps-card{background:var(--purple-dark);border:2px solid var(--purple-bright);border-radius:20px;padding:28px}
+  .step{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
+  .step:last-child{margin-bottom:0}
+  .step-num{background:var(--purple-bright);color:var(--white);font-family:'Fredoka',sans-serif;font-size:18px;font-weight:600;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+  .step-text{font-size:15px;color:var(--text-light);line-height:1.75}
+  .step-text strong{color:var(--white)}
+  .notes-card{max-width:860px;margin:0 auto 64px;padding:0 24px}
+  .notes-inner{background:var(--purple-main);border:2px solid var(--purple-bright);border-radius:20px;padding:28px}
+  .notes-title{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--white);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .notes-list{list-style:none}
+  .notes-list li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:14px;color:var(--text-light);line-height:1.5}
+  .notes-list li:last-child{border-bottom:none}
+  .notes-list li::before{content:'⭐';font-size:14px;flex-shrink:0}
+  footer{background:var(--purple-darkest);border-top:3px solid var(--purple-dark);text-align:center;padding:36px 24px}
+  .footer-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:10px}
+  .footer-text{font-size:13px;color:var(--purple-light);line-height:1.7}
+  @media(max-width:680px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}.recipe-wrap{grid-template-columns:1fr}.ingredients-card{position:static}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><span>💜</span> Taylor's Food Adventures</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">Who Is Taylor?</a></li>
+    <li><a href="journal.html">Food Journal</a></li>
+    <li><a href="recipes.html" class="active">Recipes</a></li>
+    <li><a href="blog.html">Taylor's Blog</a></li>
+    <li><a href="vlogs.html">Taylor's Vlogs</a></li>
+  </ul>
+</nav>
+<div class="recipe-hero">
+  <div class="recipe-hero-inner">
+    <div class="recipe-badge">✅ Taylor Loves This One!</div>
+    <h1>Parmesan Crusted Pork Chops</h1>
+    <p class="subtitle">Taylor's Version — Extra Garlic &amp; Extra Parmesan 💜</p>
+    <div class="recipe-meta">
+      <div class="meta-pill">🍽️ Serves 4</div>
+      <div class="meta-pill">⚡ Air Fryer</div>
+      <div class="meta-pill">🥩 1-inch Boneless Chops</div>
+      <div class="meta-pill">⏱️ 12–15 Minutes</div>
+    </div>
+  </div>
+</div>
+<div class="recipe-wrap">
+  <div class="ingredients-card">
+    <div class="card-title">🛒 Ingredients</div>
+    <ul class="ingredient-list">
+      <li class="ingredient-item">½ cup Italian Panko breadcrumbs</li>
+      <li class="ingredient-item">½ cup grated Parmesan cheese</li>
+      <li class="ingredient-item">2 tsp garlic powder</li>
+      <li class="ingredient-item">1 tsp onion powder</li>
+      <li class="ingredient-item">½ tsp paprika (regular or smoked)</li>
+      <li class="ingredient-item">½ tsp salt</li>
+      <li class="ingredient-item">¼ tsp black pepper</li>
+      <li class="ingredient-item">1 tbsp olive oil or beaten egg <span class="optional-tag">(for binding)</span></li>
+      <li class="ingredient-item">4 boneless pork chops, 1-inch thick</li>
+      <li class="ingredient-item">1 pinch brown sugar <span class="optional-tag">optional</span></li>
+      <li class="ingredient-item">1 pinch red pepper flakes <span class="optional-tag">optional</span></li>
+      <li class="ingredient-item">1 pinch mustard powder <span class="optional-tag">optional</span></li>
+    </ul>
+  </div>
+  <div class="steps-card">
+    <div class="card-title">👩‍🍳 Steps</div>
+    <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Dry the chops:</strong> Pat pork chops completely dry with paper towels — this is key for a crispy crust.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Mix the coating:</strong> Combine Panko, Parmesan, garlic powder, onion powder, paprika, salt, and pepper in a large zip bag or shallow dish. Add any optionals if using.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Coat the chops:</strong> Lightly brush or rub each chop with olive oil or beaten egg, then press the coating firmly onto all sides.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Prep the air fryer:</strong> Spray the basket with cooking spray so the coating does not stick. Spray the tops of the coated chops too — this gives extra browning.</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text"><strong>Arrange chops:</strong> Place chops in a single layer. Do not overlap — cook in batches if needed. Air circulation is what makes it crispy!</div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-text"><strong>Air fry:</strong> Cook at <strong>400°F for 12–15 minutes</strong>, flipping halfway through.</div></div>
+    <div class="step"><div class="step-num">7</div><div class="step-text"><strong>Check temp and rest:</strong> Pork is done at <strong>145°F internal temperature</strong>. Let rest 2–3 minutes before serving.</div></div>
+  </div>
+</div>
+<div class="notes-card">
+  <div class="notes-inner">
+    <div class="notes-title">💜 Tips from Taylor</div>
+    <ul class="notes-list">
+      <li>Don't overcrowd the basket — air circulation is what makes it crispy!</li>
+      <li>Thicker chops (over 1 inch) may need 2–3 extra minutes.</li>
+      <li>Keep an eye on it the first time — every air fryer runs a little differently.</li>
+      <li>Serve with warm marinara for a chicken parm-style experience!</li>
+      <li>Make a big batch of the dry mix and store in a jar — it keeps for weeks.</li>
+    </ul>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo">💜 Taylor's Food Adventures</div>
+  <div class="footer-text">Made with love by Taylor and her friend Tim<br>taylorsfoodadventures.com</div>
+</footer>
+</body>
+</html>
