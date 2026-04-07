@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who Is Taylor? | Taylor's Food Adventures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--purple-darkest:#2D0057;--purple-dark:#4B0096;--purple-main:#7B00D4;--purple-bright:#9B30FF;--purple-light:#C47FFF;--purple-pale:#EDD6FF;--white:#FFFFFF;--text-light:#F5E6FF}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Nunito',sans-serif;background:var(--purple-darkest);color:var(--white);min-height:100vh;overflow-x:hidden}
+  nav{background:var(--purple-darkest);border-bottom:2px solid var(--purple-dark);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px}
+  .nav-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:8px}
+  .nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+  .nav-links a{font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;color:var(--purple-pale);text-decoration:none;padding:6px 14px;border-radius:99px;border:1.5px solid var(--purple-dark);transition:all 0.2s}
+  .nav-links a:hover,.nav-links a.active{background:var(--purple-bright);border-color:var(--purple-bright);color:var(--white)}
+  .page-hero{background:var(--purple-main);padding:56px 24px 52px;text-align:center;position:relative;overflow:hidden}
+  .page-hero::before{content:'';position:absolute;top:-60px;left:-60px;width:260px;height:260px;background:var(--purple-bright);border-radius:50%;opacity:0.15}
+  .page-hero::after{content:'';position:absolute;bottom:-80px;right:-40px;width:300px;height:300px;background:var(--purple-dark);border-radius:50%;opacity:0.25}
+  .page-hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+  .page-hero h1{font-family:'Fredoka',sans-serif;font-size:clamp(34px,6vw,52px);font-weight:600;color:var(--white);margin-bottom:12px}
+  .page-hero p{font-size:16px;color:var(--text-light);line-height:1.7}
+  .about-wrap{max-width:860px;margin:48px auto 64px;padding:0 24px;display:flex;flex-direction:column;gap:28px}
+  .card{background:var(--purple-dark);border:2px solid var(--purple-bright);border-radius:20px;padding:32px}
+  .card-title{font-family:'Fredoka',sans-serif;font-size:24px;font-weight:600;color:var(--purple-pale);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .card-text{font-size:16px;color:var(--text-light);line-height:1.85}
+  .card-text p{margin-bottom:14px}
+  .card-text p:last-child{margin-bottom:0}
+  .card-text strong{color:var(--white)}
+  .highlight-card{background:var(--purple-main);border:2px solid var(--purple-bright);border-radius:20px;padding:32px}
+  .highlight-card .card-title{color:var(--white)}
+  .tags-wrap{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+  .tag{background:var(--purple-darkest);border:2px solid var(--purple-bright);border-radius:99px;padding:8px 18px;font-size:14px;font-weight:700;color:var(--purple-pale)}
+  .faves-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:4px}
+  .fave-card{background:var(--purple-darkest);border:2px solid var(--purple-bright);border-radius:16px;padding:20px;text-align:center}
+  .fave-emoji{font-size:36px;display:block;margin-bottom:8px}
+  .fave-name{font-family:'Fredoka',sans-serif;font-size:17px;font-weight:600;color:var(--purple-pale)}
+  .fave-sub{font-size:12px;color:var(--purple-light);margin-top:4px}
+  .message-card{background:var(--purple-bright);border:2px solid var(--white);border-radius:20px;padding:32px;text-align:center}
+  .message-card .card-title{color:var(--white);justify-content:center}
+  .message-text{font-size:18px;color:var(--white);line-height:1.8;font-weight:600;font-style:italic}
+  .message-sig{font-size:14px;color:var(--purple-pale);margin-top:16px;font-weight:700}
+  footer{background:var(--purple-darkest);border-top:3px solid var(--purple-dark);text-align:center;padding:36px 24px}
+  .footer-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:10px}
+  .footer-text{font-size:13px;color:var(--purple-light);line-height:1.7}
+  @media(max-width:640px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}.card,.highlight-card,.message-card{padding:22px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><span>💜</span> Taylor's Food Adventures</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">Who Is Taylor?</a></li>
+    <li><a href="journal.html">Food Journal</a></li>
+    <li><a href="recipes.html">Recipes</a></li>
+    <li><a href="blog.html">Taylor's Blog</a></li>
+    <li><a href="vlogs.html">Taylor's Vlogs</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <h1>👧 Who Is Taylor?</h1>
+    <p>13 years old. Proud nerd. Food explorer. Autism advocate. And yes — she knows every movie logo you can think of. 💜</p>
+  </div>
+</div>
+
+<div class="about-wrap">
+
+  <div class="card">
+    <div class="card-title">💜 Hey, I'm Taylor!</div>
+    <div class="card-text">
+      <p>I'm 13 years old and I have autism. For a long time, I only ate a really small number of foods. That's really common for kids with autism — it's not stubbornness, it's just how our brains work. Textures, smells, and new things can feel overwhelming in a way that's hard to explain.</p>
+      <p>But things have been changing! I've been staying with my friend Tim and we cook together all the time. I keep a journal of every new food I try — what I loved, what was just okay, and what <strong>offended my ancestors</strong>. 😂</p>
+      <p>So far I've tried <strong>73 foods</strong> and I'm nowhere near done. Every new try is a win, even if it ends up in the ancestors column!</p>
+    </div>
+  </div>
+
+  <div class="message-card">
+    <div class="card-title">💌 My message to other kids with autism</div>
+    <div class="message-text">"There's nothing wrong with trying new foods — and it's totally okay if you don't like them. The trying is what matters. You don't have to love everything. You just have to be brave enough to take the bite."</div>
+    <div class="message-sig">— Taylor 💜</div>
+  </div>
+
+  <div class="highlight-card">
+    <div class="card-title">🍽️ My favorite foods (so far!)</div>
+    <div class="faves-grid">
+      <div class="fave-card">
+        <span class="fave-emoji">🍗</span>
+        <div class="fave-name">Garlic Parm Chicken</div>
+        <div class="fave-sub">Wings, chops — if it has garlic parm, Taylor approves</div>
+      </div>
+      <div class="fave-card">
+        <span class="fave-emoji">🥩</span>
+        <div class="fave-name">Parmesan Pork Chops</div>
+        <div class="fave-sub">Taylor's Version — extra garlic, extra parm, always</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🎨 What else I'm into</div>
+    <div class="card-text">
+      <p>Food is just one part of my world. Here's the rest of it:</p>
+    </div>
+    <div class="tags-wrap" style="margin-top:16px">
+      <div class="tag">🎨 Drawing</div>
+      <div class="tag">🎵 Music</div>
+      <div class="tag">🌕 Full Moons</div>
+      <div class="tag">⭐ Stars</div>
+      <div class="tag">🐺 Werewolves</div>
+      <div class="tag">🎬 Movie Logos</div>
+      <div class="tag">🦁 MGM Fan</div>
+      <div class="tag">🤓 All-Around Nerd</div>
+      <div class="tag">📺 Fandoms (all of them)</div>
+      <div class="tag">💜 Purple Everything</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🤓 The Nerd Report</div>
+    <div class="card-text">
+      <p>Let's be clear — Taylor is not just <em>kind of</em> a nerd. She is an <strong>all-time, full-commitment, deep-dive nerd</strong> who is in basically every fandom you can name.</p>
+      <p>She can recognize movie studio logos instantly — MGM, Universal, the whole lineup. She notices things most people walk right past. That's the kind of brain Taylor has — one that sees details, patterns, and connections everywhere.</p>
+      <p>It's the same brain that helps her remember every food she's ever tried, every verdict, and exactly why sauerkraut belongs in the ancestors column. 😂</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">💜 Taylor's Food Adventures</div>
+  <div class="footer-text">Made with love by Taylor and her friend Tim<br>taylorsfoodadventures.com</div>
+</footer>
+</body>
+</html>
