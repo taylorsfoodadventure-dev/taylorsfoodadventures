@@ -22,19 +22,23 @@
   .page-hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
   .page-hero h1{font-family:'Fredoka',sans-serif;font-size:clamp(34px,6vw,52px);font-weight:600;color:var(--white);margin-bottom:12px}
   .page-hero p{font-size:16px;color:var(--text-light);line-height:1.7}
-  .coming-wrap{max-width:700px;margin:64px auto;padding:0 24px;text-align:center}
-  .coming-card{background:var(--purple-dark);border:2px dashed var(--purple-bright);border-radius:24px;padding:56px 40px}
-  .coming-emoji{font-size:72px;display:block;margin-bottom:24px}
-  .coming-title{font-family:'Fredoka',sans-serif;font-size:32px;font-weight:600;color:var(--purple-pale);margin-bottom:16px}
-  .coming-text{font-size:16px;color:var(--text-light);line-height:1.8;margin-bottom:28px}
-  .youtube-hint{background:var(--purple-darkest);border:2px solid var(--purple-bright);border-radius:16px;padding:20px 24px;margin-top:28px;font-size:14px;color:var(--purple-light);line-height:1.7}
-  .youtube-hint strong{color:var(--white)}
-  .coming-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:0}
-  .coming-tag{background:var(--purple-darkest);border:2px solid var(--purple-bright);border-radius:99px;padding:8px 18px;font-size:13px;font-weight:700;color:var(--purple-pale)}
-  footer{background:var(--purple-darkest);border-top:3px solid var(--purple-dark);text-align:center;padding:36px 24px;margin-top:64px}
+  .vlogs-wrap{max-width:900px;margin:48px auto 64px;padding:0 24px}
+  .section-label{font-family:'Fredoka',sans-serif;font-size:26px;font-weight:600;color:var(--purple-pale);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .vlog-card{background:var(--purple-dark);border:2px solid var(--purple-bright);border-radius:20px;overflow:hidden;margin-bottom:32px}
+  .vlog-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+  .vlog-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+  .vlog-info{padding:24px 28px}
+  .vlog-badge{display:inline-block;background:var(--purple-bright);color:var(--white);font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 12px;border-radius:99px;margin-bottom:10px}
+  .vlog-title{font-family:'Fredoka',sans-serif;font-size:24px;font-weight:600;color:var(--white);margin-bottom:8px}
+  .vlog-desc{font-size:14px;color:var(--text-light);line-height:1.7}
+  .coming-card{background:var(--purple-dark);border:2px dashed var(--purple-bright);border-radius:20px;padding:40px;text-align:center;margin-top:12px}
+  .coming-emoji{font-size:48px;display:block;margin-bottom:12px}
+  .coming-title{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:8px}
+  .coming-text{font-size:14px;color:var(--purple-light);line-height:1.7}
+  footer{background:var(--purple-darkest);border-top:3px solid var(--purple-dark);text-align:center;padding:36px 24px}
   .footer-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:10px}
   .footer-text{font-size:13px;color:var(--purple-light);line-height:1.7}
-  @media(max-width:640px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}.coming-card{padding:36px 24px}}
+  @media(max-width:640px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}.vlog-info{padding:18px 20px}}
 </style>
 </head>
 <body>
@@ -55,18 +59,22 @@
     <p>Watch Taylor try new foods, cook with her friend Tim, and go on food adventures! 💜</p>
   </div>
 </div>
-<div class="coming-wrap">
-  <div class="coming-card">
-    <span class="coming-emoji">🎬</span>
-    <div class="coming-title">Vlogs coming soon!</div>
-    <div class="coming-text">Taylor is getting ready to film her first food adventure videos! When they're ready they'll show up right here — embedded straight from her YouTube channel so you can watch without leaving the site.</div>
-    <div class="coming-tags">
-      <div class="coming-tag">🍽️ First bites</div>
-      <div class="coming-tag">👩‍🍳 Cooking with Tim</div>
-      <div class="coming-tag">😂 Honest reactions</div>
-      <div class="coming-tag">🏅 Badge unlocks</div>
+<div class="vlogs-wrap">
+  <div class="section-label">🎬 Latest videos</div>
+  <div class="vlog-card">
+    <div class="vlog-embed">
+      <iframe src="https://www.youtube.com/embed/WbDOGSD-QXg" title="Taylor's First Food Adventure Vlog" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </div>
-    <div class="youtube-hint">📺 Taylor's vlogs will be hosted on <strong>YouTube</strong> and embedded here — subscribe to her channel so you never miss a new food adventure!</div>
+    <div class="vlog-info">
+      <div class="vlog-badge">🎬 First Vlog!</div>
+      <div class="vlog-title">Taylor's First Food Adventure Vlog 💜</div>
+      <div class="vlog-desc">Taylor's very first vlog — the food adventure begins! Watch as she tries new things and documents her journey one bite at a time.</div>
+    </div>
+  </div>
+  <div class="coming-card">
+    <span class="coming-emoji">📹</span>
+    <div class="coming-title">More vlogs coming soon!</div>
+    <div class="coming-text">Taylor is just getting started! New videos will show up here as she films them. 💜</div>
   </div>
 </div>
 <footer>
