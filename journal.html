@@ -16,12 +16,15 @@
   .nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
   .nav-links a{font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;color:var(--purple-pale);text-decoration:none;padding:6px 14px;border-radius:99px;border:1.5px solid var(--purple-dark);transition:all 0.2s}
   .nav-links a:hover,.nav-links a.active{background:var(--purple-bright);border-color:var(--purple-bright);color:var(--white)}
-  .page-hero{background:var(--purple-main);padding:48px 24px;text-align:center}
+  .page-hero{background:var(--purple-main);padding:48px 24px;text-align:center;position:relative;overflow:hidden}
+  .page-hero::before{content:'';position:absolute;top:-60px;left:-60px;width:260px;height:260px;background:var(--purple-bright);border-radius:50%;opacity:0.15}
+  .page-hero::after{content:'';position:absolute;bottom:-80px;right:-40px;width:300px;height:300px;background:var(--purple-dark);border-radius:50%;opacity:0.25}
+  .page-hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
   .page-hero h1{font-family:'Fredoka',sans-serif;font-size:42px;font-weight:600;color:var(--white);margin-bottom:10px}
   .page-hero p{font-size:16px;color:var(--text-light);max-width:500px;margin:0 auto}
   .stats-bar{background:var(--purple-dark);padding:20px 24px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;border-bottom:2px solid var(--purple-main)}
   .stat-item{text-align:center}
-  .stat-num{font-family:'Fredoka',sans-serif;font-size:28px;font-weight:600;color:var(--purple-pale);display:block}
+  .stat-num{font-family:'Fredoka',sans-serif;font-size:28px;font-weight:600;display:block}
   .stat-label{font-size:12px;font-weight:600;color:var(--purple-light);text-transform:uppercase;letter-spacing:0.06em}
   .controls{max-width:960px;margin:32px auto 0;padding:0 24px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .search-box{flex:1;min-width:200px;background:var(--purple-dark);border:2px solid var(--purple-bright);border-radius:99px;padding:10px 20px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:var(--white);outline:none}
@@ -40,6 +43,7 @@
   .col-food{flex:1;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--purple-pale)}
   .col-status{width:200px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--purple-pale);text-align:center}
   .col-made{width:80px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--purple-pale);text-align:center}
+  .col-date{width:110px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--purple-pale);text-align:center}
   .journal-row{display:flex;align-items:center;padding:13px 24px;border-bottom:1px solid var(--purple-main);gap:12px;transition:background 0.15s}
   .journal-row:last-child{border-bottom:none}
   .journal-row:hover{background:rgba(155,48,255,0.2)}
@@ -50,11 +54,12 @@
   .pill-yellow{background:#4A2E00;color:#FFD166}
   .pill-red{background:#4A0000;color:#FF9999}
   .made-it{width:80px;text-align:center;font-size:18px}
+  .date-tried{width:110px;text-align:center;font-size:12px;color:var(--purple-light);font-weight:600}
   .no-results{text-align:center;padding:48px 24px;color:var(--purple-light);font-size:16px;font-weight:600}
   footer{background:var(--purple-darkest);border-top:3px solid var(--purple-dark);text-align:center;padding:36px 24px}
   .footer-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:10px}
   .footer-text{font-size:13px;color:var(--purple-light);line-height:1.7}
-  @media(max-width:640px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}.col-status{width:130px}.col-made{width:80px;text-align:center}.made-it{text-align:center}.pill{width:130px;font-size:11px}}
+  @media(max-width:640px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}.col-status{width:130px}.pill{width:130px;font-size:11px}.col-date{display:none}.date-tried{display:none}}
 </style>
 </head>
 <body>
@@ -69,20 +74,19 @@
     <li><a href="vlogs.html">Taylor's Vlogs</a></li>
   </ul>
 </nav>
-
 <div class="page-hero">
-  <h1>📋 Food Journal</h1>
-  <p>Every food I've ever tried — the good, the okay, and the ones that offended my ancestors 😂</p>
+  <div class="page-hero-inner">
+    <h1>📋 Food Journal</h1>
+    <p>Every food I've ever tried — the good, the okay, and the ones that offended my ancestors 😂</p>
+  </div>
 </div>
-
 <div class="stats-bar">
-  <div class="stat-item"><span class="stat-num">76</span><div class="stat-label">Total tried</div></div>
-  <div class="stat-item"><span class="stat-num" style="color:#8DDE50">43</span><div class="stat-label">✅ Loved it</div></div>
+  <div class="stat-item"><span class="stat-num" style="color:var(--purple-pale)">79</span><div class="stat-label">Total tried</div></div>
+  <div class="stat-item"><span class="stat-num" style="color:#8DDE50">46</span><div class="stat-label">✅ Loved it</div></div>
   <div class="stat-item"><span class="stat-num" style="color:#FFD166">13</span><div class="stat-label">🟡 It was ok</div></div>
-  <div class="stat-item"><span class="stat-num" style="color:#FF9999">19</span><div class="stat-label">😤 Offended ancestors</div></div>
-  <div class="stat-item"><span class="stat-num" style="color:#C47FFF">14</span><div class="stat-label">👩‍🍳 I made this!</div></div>
+  <div class="stat-item"><span class="stat-num" style="color:#FF9999">20</span><div class="stat-label">😤 Offended ancestors</div></div>
+  <div class="stat-item"><span class="stat-num" style="color:#C47FFF">13</span><div class="stat-label">👩‍🍳 I made this!</div></div>
 </div>
-
 <div class="controls">
   <input class="search-box" type="text" placeholder="🔍  Search foods..." id="search" oninput="filterTable()">
   <div class="filter-btns">
@@ -92,101 +96,102 @@
     <button class="filter-btn f-red" data-filter="red" onclick="setFilter('red',this)">😤 Ancestors</button>
   </div>
 </div>
-
 <div class="journal-wrap">
   <div class="journal-table">
     <div class="journal-header">
       <div class="col-food">Food</div>
       <div class="col-status">Verdict</div>
-      <div class="col-made">Made it!</div>
+      <div class="col-made">👩‍🍳</div>
+      <div class="col-date">Date Tried</div>
     </div>
     <div id="journal-body">
-      <div class="journal-row" data-color="red"><span class="food-name">Apple Pie</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Avocado Toast</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Bacon, Egg &amp; Cheese Muffin</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Baked Beans</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Bananas Foster French Toast</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Beef Prime Rib</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Beef Stew</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Beef Vegetable Soup</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Beef, Corned</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Blue Cheese</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Boba Tea</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Breakfast Casserole</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Broccoli Cauliflower Salad</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Broccoli Salad</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Butterscotch Pudding</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Carrots, Cooked</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Chicken &amp; Rice</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Chicken &amp; Rice (Tim's Special Touch)</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Chicken Quesadilla</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Chicken Wings, Garlic Parm</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Chicken, Creamy</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Chicken, Fried</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Chicken, Honey Garlic</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Chocolate Peanut Butter Oatmeal Cookies</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Clams, Fried Strips</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Cranberry Relish</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Cube Steak (Pork Loin)</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Dragonfruit</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Eggs, Scrambled &amp; Cheese</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Flounder, Fried</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">French Fries, Garlic Parm</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Fried Bread</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Ginger Ale, Cranberry</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Glorified Rice</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Green Bean Casserole</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Grilled Cheese &amp; Tomato Soup</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Ham</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Horiatiki</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Horseradish Sauce</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Lamb Chops with Mint Chimichurri</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Lasagna</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Mashed Potatoes</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Mashed Potatoes, Roasted Garlic</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Meatball Casserole</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Meatball Sub</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Meatloaf</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Mushroom &amp; Swiss Burger</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Paella, Sausage, Chicken &amp; Shrimp</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Peanut Butter Blossom Cookies</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Peanut Butter Milkshake</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Pierogis, Potato and Onion</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Pomello</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Pork &amp; Sauerkraut</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Pork Chops, Breaded Garlic Parm</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Pork Chops, Garlic Parmesan</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Pork Sausage</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Pork, BBQ Spare Ribs</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Raisin Sauce</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Ramen, Pork</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Ranch Dressing</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Reuben</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Sauerkraut Balls</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Scallop, Bacon Wrapped</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Seafood Cakes</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Shrimp Cocktail</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Sloppy Joes</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Stir Fry, Beef</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Stuffing</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Sushi, Tuna/Salmon</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="yellow"><span class="food-name">Sweet Potato Casserole</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Tapioca Pudding</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="red"><span class="food-name">Turkey Meat Stick</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Turkey, Roasted</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Unsweetened Iced Tea w/Lemon</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Yogurt, Boston Cream Pie</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
-      <div class="journal-row" data-color="green"><span class="food-name">Yogurt, Key Lime</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Alligator, Fried</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried">Sep 11, 2025</span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Apple Pie</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried">Nov 6, 2025</span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Avocado Toast</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried">Nov 15, 2025</span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Bacon, Egg &amp; Cheese Muffin</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Baked Beans</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried">Nov 19, 2025</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Bananas Foster French Toast</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried">Jan 3, 2026</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Beef Prime Rib</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Beef Stew</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Beef Vegetable Soup</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Beef, Corned</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Blue Cheese</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Boba Tea</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Breakfast Casserole</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried">Dec 27, 2025</span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Broccoli Cauliflower Salad</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Broccoli Salad</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Butterscotch Pudding</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Carrots, Cooked</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Catfish, Fried</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried">Oct 16, 2024</span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Chicken &amp; Rice</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Chicken &amp; Rice (Tim's Special Touch)</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Chicken Quesadilla</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried">Jan 31, 2026</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Chicken Wings, Garlic Parm</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried">Nov 18, 2025</span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Chicken, Creamy</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Chicken, Fried</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Chicken, Honey Garlic</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried">Nov 13, 2025</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Chocolate Peanut Butter Oatmeal Cookies</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Clams, Fried Strips</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried">Feb 24, 2026</span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Cranberry Relish</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Cube Steak (Pork Loin — SHE CUT IT! 🎉)</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Dragonfruit</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Eggs, Scrambled &amp; Cheese</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Flounder, Fried</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried">Feb 24, 2026</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">French Fries, Garlic Parm</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried">Nov 16, 2025</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Fried Bread</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Ginger Ale, Cranberry</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Glorified Rice</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried">Apr 5, 2026</span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Green Bean Casserole</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Grilled Cheese &amp; Tomato Soup</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Ham</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried">Apr 16, 2026</span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Horiatiki</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Horseradish Sauce</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Lamb Chops with Mint Chimichurri</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it">👩‍🍳</span><span class="date-tried">Nov 30, 2025</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Lasagna</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Mashed Potatoes</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Mashed Potatoes, Roasted Garlic</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Meatball Casserole</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried">Mar 14, 2026</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Meatball Sub</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried">Apr 11, 2026</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Meatloaf</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Mushroom &amp; Swiss Burger</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Paella, Sausage, Chicken &amp; Shrimp</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried">Mar 1, 2026</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Peanut Butter Blossom Cookies</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Peanut Butter Milkshake</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Pierogis, Potato and Onion</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Pomello</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Pork &amp; Sauerkraut</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Pork Chops, Breaded Garlic Parm</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Pork Chops, Garlic Parmesan</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Pork Sausage</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Pork, BBQ Spare Ribs</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Raisin Sauce</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried">Apr 5, 2026</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Ramen, Pork</span><span class="pill pill-green">✅ Loved it</span><span class="made-it">👩‍🍳</span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Ranch Dressing</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried">Apr 10, 2026</span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Reuben</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried">Jan 17, 2026</span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Sauerkraut Balls</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Scallop, Bacon Wrapped</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried">Feb 24, 2026</span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Seafood Cakes</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried">Feb 24, 2026</span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Shrimp Cocktail</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Sloppy Joes</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Stir Fry, Beef</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Stuffing</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Sushi, Tuna/Salmon</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried">Jan 29, 2026</span></div>
+      <div class="journal-row" data-color="yellow"><span class="food-name">Sweet Potato Casserole</span><span class="pill pill-yellow">🟡 It was ok</span><span class="made-it"></span><span class="date-tried">Nov 19, 2025</span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Tapioca Pudding</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Tomatoes, Raw</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried">Apr 16, 2025</span></div>
+      <div class="journal-row" data-color="red"><span class="food-name">Turkey Meat Stick</span><span class="pill pill-red">😤 Offended my ancestors</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Turkey, Roasted</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Unsweetened Iced Tea w/Lemon</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Yogurt, Boston Cream Pie</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
+      <div class="journal-row" data-color="green"><span class="food-name">Yogurt, Key Lime</span><span class="pill pill-green">✅ Loved it</span><span class="made-it"></span><span class="date-tried"></span></div>
       <div class="no-results hidden" id="no-results">No foods found! Try a different search. 🔍</div>
     </div>
   </div>
 </div>
-
 <footer>
   <div class="footer-logo">💜 Taylor's Food Adventures</div>
   <div class="footer-text">Made with love by Taylor and her friend Tim<br>taylorsfoodadventures.com</div>
 </footer>
-
 <script>
   let currentFilter = 'all';
   function setFilter(f, btn) {
