@@ -196,12 +196,22 @@
 </footer>
 <script>
   let currentFilter = 'all';
+
+  function sortAlpha() {
+    const body = document.getElementById('journal-body');
+    const rows = Array.from(body.querySelectorAll('.journal-row[data-color]'));
+    rows.sort((a, b) => a.querySelector('.food-name').textContent.localeCompare(b.querySelector('.food-name').textContent));
+    const noResults = document.getElementById('no-results');
+    rows.forEach(r => body.insertBefore(r, noResults));
+  }
+
   function setFilter(f, btn) {
     currentFilter = f;
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     filterTable();
   }
+
   function filterTable() {
     const q = document.getElementById('search').value.toLowerCase();
     const rows = document.querySelectorAll('.journal-row[data-color]');
@@ -216,6 +226,8 @@
     });
     document.getElementById('no-results').classList.toggle('hidden', visible > 0);
   }
+
+  document.addEventListener('DOMContentLoaded', sortAlpha);
 </script>
 </body>
 </html>
