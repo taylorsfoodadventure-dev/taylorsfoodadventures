@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taylor's Favorites | Taylor's Food Adventures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--purple-darkest:#2D0057;--purple-dark:#4B0096;--purple-main:#7B00D4;--purple-bright:#9B30FF;--purple-light:#C47FFF;--purple-pale:#EDD6FF;--white:#FFFFFF;--text-light:#F5E6FF}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Nunito',sans-serif;background:var(--purple-darkest);color:var(--white);min-height:100vh;overflow-x:hidden}
+  nav{background:var(--purple-darkest);border-bottom:2px solid var(--purple-dark);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px}
+  .nav-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:8px}
+  .nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+  .nav-links a{font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;color:var(--purple-pale);text-decoration:none;padding:6px 14px;border-radius:99px;border:1.5px solid var(--purple-dark);transition:all 0.2s}
+  .nav-links a:hover,.nav-links a.active{background:var(--purple-bright);border-color:var(--purple-bright);color:var(--white)}
+  .page-hero{background:var(--purple-main);padding:56px 24px 52px;text-align:center;position:relative;overflow:hidden}
+  .page-hero::before{content:'';position:absolute;top:-60px;left:-60px;width:260px;height:260px;background:var(--purple-bright);border-radius:50%;opacity:0.15}
+  .page-hero::after{content:'';position:absolute;bottom:-80px;right:-40px;width:300px;height:300px;background:var(--purple-dark);border-radius:50%;opacity:0.25}
+  .page-hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+  .page-hero h1{font-family:'Fredoka',sans-serif;font-size:clamp(34px,6vw,52px);font-weight:600;color:var(--white);margin-bottom:12px}
+  .page-hero p{font-size:16px;color:var(--text-light);line-height:1.7}
+  .wrap{max-width:900px;margin:48px auto 64px;padding:0 24px;display:flex;flex-direction:column;gap:32px}
+  .section-label{font-family:'Fredoka',sans-serif;font-size:26px;font-weight:600;color:var(--purple-pale);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .faves-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+  .fave-card{background:var(--purple-dark);border:2px solid var(--purple-bright);border-radius:20px;padding:24px 20px;text-align:center;transition:transform 0.2s}
+  .fave-card:hover{transform:translateY(-4px)}
+  .fave-emoji{font-size:44px;display:block;margin-bottom:12px}
+  .fave-name{font-family:'Fredoka',sans-serif;font-size:18px;font-weight:600;color:var(--white);margin-bottom:6px}
+  .fave-desc{font-size:13px;color:var(--purple-light);line-height:1.5}
+  .prefs-card{background:var(--purple-dark);border:2px solid var(--purple-bright);border-radius:20px;padding:28px 32px}
+  .prefs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:4px}
+  .pref-item{display:flex;flex-direction:column;gap:6px}
+  .pref-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--purple-light)}
+  .pref-value{font-family:'Fredoka',sans-serif;font-size:18px;font-weight:600;color:var(--white)}
+  .brave-card{background:var(--purple-bright);border:2px solid var(--white);border-radius:20px;padding:32px;text-align:center}
+  .brave-emoji{font-size:64px;display:block;margin-bottom:16px}
+  .brave-title{font-family:'Fredoka',sans-serif;font-size:26px;font-weight:600;color:var(--white);margin-bottom:10px}
+  .brave-text{font-size:15px;color:var(--purple-pale);line-height:1.7}
+  .next-card{background:var(--purple-dark);border:2px dashed var(--purple-bright);border-radius:20px;padding:28px 32px}
+  .quote-card{background:var(--purple-main);border:2px solid var(--white);border-radius:20px;padding:36px;text-align:center}
+  .quote-text{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:500;color:var(--white);line-height:1.5;margin-bottom:16px;font-style:italic}
+  .quote-sig{font-size:14px;font-weight:700;color:var(--purple-pale)}
+  footer{background:var(--purple-darkest);border-top:3px solid var(--purple-dark);text-align:center;padding:36px 24px}
+  .footer-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:10px}
+  .footer-text{font-size:13px;color:var(--purple-light);line-height:1.7}
+  @media(max-width:640px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><span>💜</span> Taylor's Food Adventures</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">Who Is Taylor?</a></li>
+    <li><a href="journal.html">Food Journal</a></li>
+    <li><a href="recipes.html">Recipes</a></li>
+    <li><a href="favorites.html" class="active">Favorites</a></li>
+    <li><a href="blog.html">Taylor's Blog</a></li>
+    <li><a href="vlogs.html">Taylor's Vlogs</a></li>
+  </ul>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <h1>⭐ Taylor's Favorites</h1>
+    <p>These are MY all-time favorite foods — the ones I would eat every single day and never get tired of. 💜</p>
+  </div>
+</div>
+<div class="wrap">
+  <div>
+    <div class="section-label">⭐ My All-Time Favorite Foods</div>
+    <div class="faves-grid">
+      <div class="fave-card"><span class="fave-emoji">🍦</span><div class="fave-name">Yogurt</div><div class="fave-desc">Boston Cream Pie and Key Lime are my favorites — they taste like dessert but they're a snack!</div></div>
+      <div class="fave-card"><span class="fave-emoji">🥩</span><div class="fave-name">Garlic Parm Pork</div><div class="fave-desc">Garlic + parmesan + pork = perfection. This is basically my superpower flavor combination.</div></div>
+      <div class="fave-card"><span class="fave-emoji">🍔</span><div class="fave-name">Cheeseburger</div><div class="fave-desc">A classic! Juicy, cheesy, and satisfying — cheeseburgers never miss.</div></div>
+      <div class="fave-card"><span class="fave-emoji">🍕</span><div class="fave-name">Pizza</div><div class="fave-desc">Is there anyone who doesn't love pizza? The answer is no. Pizza is always the right choice.</div></div>
+      <div class="fave-card"><span class="fave-emoji">🍌</span><div class="fave-name">Banana</div><div class="fave-desc">Taylor's go-to breakfast! Simple, sweet, and perfect to start the day.</div></div>
+      <div class="fave-card"><span class="fave-emoji">🧋</span><div class="fave-name">Boba Tea</div><div class="fave-desc">One of the best food adventure discoveries! The tapioca pearls are so satisfying.</div></div>
+      <div class="fave-card"><span class="fave-emoji">🍨</span><div class="fave-name">Ice Cream</div><div class="fave-desc">Always yes. Any flavor. Any time. Ice cream is non-negotiable. 😄</div></div>
+      <div class="fave-card"><span class="fave-emoji">🍮</span><div class="fave-name">Pudding</div><div class="fave-desc">DEF pudding!! Butterscotch pudding from the food journal is a top tier favorite.</div></div>
+    </div>
+  </div>
+  <div class="prefs-card">
+    <div class="section-label">🧄 Taylor's Flavor Profile</div>
+    <div class="prefs-grid">
+      <div class="pref-item"><div class="pref-label">Favorite flavors</div><div class="pref-value">Garlic &amp; Cheese 🧄🧀</div></div>
+      <div class="pref-item"><div class="pref-label">Sweet or savory?</div><div class="pref-value">Both! 🍕🍰</div></div>
+      <div class="pref-item"><div class="pref-label">Spicy?</div><div class="pref-value">NOPE ❌🌶️</div></div>
+      <div class="pref-item"><div class="pref-label">Favorite drink</div><div class="pref-value">Water &amp; Boba Tea 💧🧋</div></div>
+      <div class="pref-item"><div class="pref-label">Favorite breakfast</div><div class="pref-value">Banana 🍌</div></div>
+      <div class="pref-item"><div class="pref-label">Favorite dessert</div><div class="pref-value">Ice Cream &amp; Pudding 🍦🍮</div></div>
+    </div>
+  </div>
+  <div class="brave-card">
+    <span class="brave-emoji">🐊</span>
+    <div class="brave-title">Bravest Food I've Ever Tried</div>
+    <div class="brave-text">FRIED ALLIGATOR! Yes, really. Not many 13-year-olds can say they've eaten gator — and loved it! Taylor is officially braver than most adults when it comes to food.<br><br>Most proud try: <strong>Shrimp Cocktail</strong> — didn't love it, but SO brave for trying! 🍤</div>
+  </div>
+  <div class="next-card">
+    <div class="section-label">🥗 Next Food on the List</div>
+    <div style="font-size:15px;color:var(--text-light);line-height:1.8;">Taylor's next food adventure target is <strong style="color:var(--white)">salad!</strong> 🥗 There are so many different kinds — Caesar, garden, pasta, fruit — so there's definitely one out there that will make the Loved It list. Watch this space!</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"It's okay not to like new foods — and if you do, that's okay too!"</div>
+    <div class="quote-sig">— Taylor's advice to other kids with autism 💜</div>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo">💜 Taylor's Food Adventures</div>
+  <div class="footer-text">Made with love by Taylor and her friend Tim<br>taylorsfoodadventures.com</div>
+</footer>
+</body>
+</html>
