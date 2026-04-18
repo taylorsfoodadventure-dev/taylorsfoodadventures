@@ -22,17 +22,24 @@
   .page-hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
   .page-hero h1{font-family:'Fredoka',sans-serif;font-size:clamp(34px,6vw,52px);font-weight:600;color:var(--white);margin-bottom:12px}
   .page-hero p{font-size:16px;color:var(--text-light);line-height:1.7}
-  .coming-wrap{max-width:700px;margin:64px auto;padding:0 24px;text-align:center}
-  .coming-card{background:var(--purple-dark);border:2px dashed var(--purple-bright);border-radius:24px;padding:56px 40px}
-  .coming-emoji{font-size:72px;display:block;margin-bottom:24px}
-  .coming-title{font-family:'Fredoka',sans-serif;font-size:32px;font-weight:600;color:var(--purple-pale);margin-bottom:16px}
-  .coming-text{font-size:16px;color:var(--text-light);line-height:1.8;margin-bottom:28px}
-  .coming-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-  .coming-tag{background:var(--purple-darkest);border:2px solid var(--purple-bright);border-radius:99px;padding:8px 18px;font-size:13px;font-weight:700;color:var(--purple-pale)}
-  footer{background:var(--purple-darkest);border-top:3px solid var(--purple-dark);text-align:center;padding:36px 24px;margin-top:64px}
+  .blog-wrap{max-width:760px;margin:48px auto 64px;padding:0 24px;display:flex;flex-direction:column;gap:32px}
+  .post-card{background:var(--purple-dark);border:2px solid var(--purple-bright);border-radius:20px;overflow:hidden}
+  .post-header{padding:28px 32px 20px}
+  .post-badge{display:inline-block;background:var(--purple-bright);color:var(--white);font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 12px;border-radius:99px;margin-bottom:12px}
+  .post-title{font-family:'Fredoka',sans-serif;font-size:26px;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.2}
+  .post-date{font-size:12px;color:var(--purple-light);font-weight:600}
+  .post-divider{height:2px;background:var(--purple-main);margin:0}
+  .post-body{padding:28px 32px;font-size:16px;color:var(--text-light);line-height:1.9}
+  .post-body h2{font-family:'Fredoka',sans-serif;font-size:20px;font-weight:600;color:var(--purple-pale);margin:24px 0 10px}
+  .post-body h2:first-child{margin-top:0}
+  .post-body p{margin-bottom:16px}
+  .post-body p:last-child{margin-bottom:0}
+  .post-body strong{color:var(--white)}
+  .post-sig{padding:20px 32px;background:var(--purple-main);font-size:14px;font-weight:700;color:var(--purple-pale);border-top:2px solid var(--purple-bright)}
+  footer{background:var(--purple-darkest);border-top:3px solid var(--purple-dark);text-align:center;padding:36px 24px}
   .footer-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:10px}
   .footer-text{font-size:13px;color:var(--purple-light);line-height:1.7}
-  @media(max-width:640px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}.coming-card{padding:36px 24px}}
+  @media(max-width:640px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}.post-header,.post-body,.post-sig{padding:20px}}
 </style>
 </head>
 <body>
@@ -48,26 +55,39 @@
     <li><a href="vlogs.html">Taylor's Vlogs</a></li>
   </ul>
 </nav>
+
 <div class="page-hero">
   <div class="page-hero-inner">
     <h1>✍️ Taylor's Blog</h1>
     <p>Stories, thoughts, and food adventures — written by Taylor herself. 💜</p>
   </div>
 </div>
-<div class="coming-wrap">
-  <div class="coming-card">
-    <span class="coming-emoji">✍️</span>
-    <div class="coming-title">Blog posts coming soon!</div>
-    <div class="coming-text">Taylor is working on her first posts! Check back soon for stories about new foods she has tried, cooking adventures with her friend Tim, and whatever else is on her mind. 💜</div>
-    <div class="coming-tags">
-      <div class="coming-tag">🍽️ Food reviews</div>
-      <div class="coming-tag">👩‍🍳 Cooking adventures</div>
-      <div class="coming-tag">🌕 Life stuff</div>
-      <div class="coming-tag">🤓 Nerd things</div>
-      <div class="coming-tag">💜 All things Taylor</div>
+
+<div class="blog-wrap">
+
+  <div class="post-card">
+    <div class="post-header">
+      <div class="post-badge">✍️ First Blog Post!</div>
+      <div class="post-title">Overcoming Challenges and Embracing Change</div>
+      <div class="post-date">April 2026 · Written by Taylor</div>
     </div>
+    <div class="post-divider"></div>
+    <div class="post-body">
+      <p>When I was younger, I often felt stuck in a rut. Life seemed repetitive and I struggled to break free from my routine. However, as I've grown older, things have changed significantly. The turning point came when my mom underwent surgery. During that period, I started staying with Tim for a while, which brought new experiences and responsibilities into my life.</p>
+
+      <h2>Learning Independence</h2>
+      <p>Living with Tim taught me the importance of self-sufficiency. I began doing chores around the house without being prompted, showing initiative and responsibility. I also learned to cook for myself, which was a big step toward becoming more independent. These experiences have helped me gain confidence and develop new skills.</p>
+
+      <h2>Bravery in Trying New Foods</h2>
+      <p>This journey is what makes my story interesting. It's all about my bravery — especially when it comes to trying new foods and embracing new challenges. Through these experiences, I've learned to appreciate my own growth and recognize how awesome it feels to step out of my comfort zone.</p>
+
+      <p>And basically, <strong>I have changed into an independent young woman who has autism and doesn't do picky eating much anymore!</strong></p>
+    </div>
+    <div class="post-sig">— Taylor 💜</div>
   </div>
+
 </div>
+
 <footer>
   <div class="footer-logo">💜 Taylor's Food Adventures</div>
   <div class="footer-text">Made with love by Taylor and her friend Tim<br>taylorsfoodadventures.com</div>
