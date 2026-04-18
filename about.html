@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--purple-darkest:#2D0057;--purple-dark:#4B0096;--purple-main:#7B00D4;--purple-bright:#9B30FF;--purple-light:#C47FFF;--purple-pale:#EDD6FF;--white:#FFFFFF;--text-light:#F5E6FF}
+  :root{--purple-darkest:#2D0057;--purple-dark:#4B0096;--purple-main:#7B00D4;--purple-bright:#9B30FF;--purple-light:#C47FFF;--purple-pale:#EDD6FF;--white:#FFFFFF;--text-light:#F5E6FF;--black:#0A0A0A}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Nunito',sans-serif;background:var(--purple-darkest);color:var(--white);min-height:100vh;overflow-x:hidden}
   nav{background:var(--purple-darkest);border-bottom:2px solid var(--purple-dark);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px}
@@ -29,23 +29,25 @@
   .card-text p{margin-bottom:14px}
   .card-text p:last-child{margin-bottom:0}
   .card-text strong{color:var(--white)}
-  .highlight-card{background:var(--purple-main);border:2px solid var(--purple-bright);border-radius:20px;padding:32px}
-  .highlight-card .card-title{color:var(--white)}
-  .tags-wrap{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+  .dark-card{background:#0A0A0A;border:2px solid var(--purple-bright);border-radius:20px;padding:32px}
+  .dark-card .card-title{color:var(--purple-pale)}
+  .dark-card .card-text{color:#CCCCCC}
+  .tags-wrap{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
   .tag{background:var(--purple-darkest);border:2px solid var(--purple-bright);border-radius:99px;padding:8px 18px;font-size:14px;font-weight:700;color:var(--purple-pale)}
-  .faves-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:4px}
-  .fave-card{background:var(--purple-darkest);border:2px solid var(--purple-bright);border-radius:16px;padding:20px;text-align:center}
-  .fave-emoji{font-size:36px;display:block;margin-bottom:8px}
-  .fave-name{font-family:'Fredoka',sans-serif;font-size:17px;font-weight:600;color:var(--purple-pale)}
-  .fave-sub{font-size:12px;color:var(--purple-light);margin-top:4px}
-  .message-card{background:var(--purple-bright);border:2px solid var(--white);border-radius:20px;padding:32px;text-align:center}
-  .message-card .card-title{color:var(--white);justify-content:center}
-  .message-text{font-size:18px;color:var(--white);line-height:1.8;font-weight:600;font-style:italic}
-  .message-sig{font-size:14px;color:var(--purple-pale);margin-top:16px;font-weight:700}
+  .tag-black{background:#0A0A0A;border:2px solid #555;border-radius:99px;padding:8px 18px;font-size:14px;font-weight:700;color:#CCCCCC}
+  .colors-row{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
+  .color-swatch{display:flex;align-items:center;gap:10px;background:var(--purple-darkest);border:2px solid var(--purple-bright);border-radius:12px;padding:12px 20px}
+  .swatch-dot{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,0.2)}
+  .swatch-label{font-family:'Fredoka',sans-serif;font-size:16px;font-weight:600;color:var(--white)}
+  .highlight-card{background:var(--purple-bright);border:2px solid var(--white);border-radius:20px;padding:32px}
+  .highlight-card .card-title{color:var(--white)}
+  .message-card{background:var(--purple-main);border:2px solid var(--white);border-radius:20px;padding:36px;text-align:center}
+  .message-text{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:500;color:var(--white);line-height:1.6;margin-bottom:16px;font-style:italic}
+  .message-sig{font-size:14px;color:var(--purple-pale);font-weight:700}
   footer{background:var(--purple-darkest);border-top:3px solid var(--purple-dark);text-align:center;padding:36px 24px}
   .footer-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:10px}
   .footer-text{font-size:13px;color:var(--purple-light);line-height:1.7}
-  @media(max-width:640px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}.card,.highlight-card,.message-card{padding:22px}}
+  @media(max-width:640px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}.card,.dark-card,.highlight-card,.message-card{padding:22px}}
 </style>
 </head>
 <body>
@@ -65,7 +67,7 @@
 <div class="page-hero">
   <div class="page-hero-inner">
     <h1>👧 Who Is Taylor?</h1>
-    <p>13 years old. Proud nerd. Food explorer. Autism advocate. And yes — she knows every movie logo you can think of. 💜</p>
+    <p>13 years old. Food explorer. Werewolf enthusiast. Full moon watcher. Star gazer. 💜🖤</p>
   </div>
 </div>
 
@@ -76,58 +78,50 @@
     <div class="card-text">
       <p>I'm 13 years old and I have autism. For a long time, I only ate a really small number of foods. That's really common for kids with autism — it's not stubbornness, it's just how our brains work. Textures, smells, and new things can feel overwhelming in a way that's hard to explain.</p>
       <p>But things have been changing! I've been staying with my friend Tim and we cook together all the time. I keep a journal of every new food I try — what I loved, what was just okay, and what <strong>offended my ancestors</strong>. 😂</p>
-      <p>So far I've tried <strong>73 foods</strong> and I'm nowhere near done. Every new try is a win, even if it ends up in the ancestors column!</p>
+      <p>So far I've tried <strong>81 foods</strong> and I'm nowhere near done. Every new try is a win, even if it ends up in the ancestors column!</p>
+    </div>
+  </div>
+
+  <div class="dark-card">
+    <div class="card-title">🖤 My Favorite Colors</div>
+    <div class="card-text"><p>Two colors that just go together perfectly.</p></div>
+    <div class="colors-row">
+      <div class="color-swatch">
+        <div class="swatch-dot" style="background:#9B30FF;border-color:#C47FFF"></div>
+        <div class="swatch-label">Purple 💜</div>
+      </div>
+      <div class="color-swatch" style="border-color:#555">
+        <div class="swatch-dot" style="background:#0A0A0A;border-color:#555"></div>
+        <div class="swatch-label">Black 🖤</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dark-card">
+    <div class="card-title">🌕 Things I Love</div>
+    <div class="card-text"><p>The things that make Taylor, Taylor.</p></div>
+    <div class="tags-wrap">
+      <div class="tag">🐺 Werewolves</div>
+      <div class="tag">🌕 Full Moons</div>
+      <div class="tag">⭐ Stars</div>
+      <div class="tag">🎨 Drawing</div>
+      <div class="tag">🎵 Music</div>
+      <div class="tag">💜 Purple Everything</div>
+      <div class="tag-black">🖤 Black Everything</div>
+    </div>
+  </div>
+
+  <div class="highlight-card">
+    <div class="card-title">🐊 Food Explorer</div>
+    <div class="card-text" style="color:var(--purple-pale)">
+      <p>I've tried <strong style="color:var(--white)">81 foods</strong> on my food adventure — including <strong style="color:var(--white)">fried alligator</strong>, which I actually loved! I have autism and used to only eat a handful of foods. Now I try something new all the time.</p>
+      <p>I even helped break down a whole pork loin — cut about a quarter of it myself and ran it through the cuber attachment. I also helped make lasagna, fried chicken, ramen, and a whole bunch more.</p>
     </div>
   </div>
 
   <div class="message-card">
-    <div class="card-title">💌 My message to other kids with autism</div>
-    <div class="message-text">"There's nothing wrong with trying new foods — and it's totally okay if you don't like them. The trying is what matters. You don't have to love everything. You just have to be brave enough to take the bite."</div>
-    <div class="message-sig">— Taylor 💜</div>
-  </div>
-
-  <div class="highlight-card">
-    <div class="card-title">🍽️ My favorite foods (so far!)</div>
-    <div class="faves-grid">
-      <div class="fave-card">
-        <span class="fave-emoji">🍗</span>
-        <div class="fave-name">Garlic Parm Chicken</div>
-        <div class="fave-sub">Wings, chops — if it has garlic parm, Taylor approves</div>
-      </div>
-      <div class="fave-card">
-        <span class="fave-emoji">🥩</span>
-        <div class="fave-name">Parmesan Pork Chops</div>
-        <div class="fave-sub">Taylor's Version — extra garlic, extra parm, always</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">🎨 What else I'm into</div>
-    <div class="card-text">
-      <p>Food is just one part of my world. Here's the rest of it:</p>
-    </div>
-    <div class="tags-wrap" style="margin-top:16px">
-      <div class="tag">🎨 Drawing</div>
-      <div class="tag">🎵 Music</div>
-      <div class="tag">🌕 Full Moons</div>
-      <div class="tag">⭐ Stars</div>
-      <div class="tag">🐺 Werewolves</div>
-      <div class="tag">🎬 Movie Logos</div>
-      <div class="tag">🦁 MGM Fan</div>
-      <div class="tag">🤓 All-Around Nerd</div>
-      <div class="tag">📺 Fandoms (all of them)</div>
-      <div class="tag">💜 Purple Everything</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">🤓 The Nerd Report</div>
-    <div class="card-text">
-      <p>Let's be clear — Taylor is not just <em>kind of</em> a nerd. She is an <strong>all-time, full-commitment, deep-dive nerd</strong> who is in basically every fandom you can name.</p>
-      <p>She can recognize movie studio logos instantly — MGM, Universal, the whole lineup. She notices things most people walk right past. That's the kind of brain Taylor has — one that sees details, patterns, and connections everywhere.</p>
-      <p>It's the same brain that helps her remember every food she's ever tried, every verdict, and exactly why sauerkraut belongs in the ancestors column. 😂</p>
-    </div>
+    <div class="message-text">"It's okay not to like new foods — and if you do, that's okay too!"</div>
+    <div class="message-sig">— Taylor's advice to other kids with autism 💜</div>
   </div>
 
 </div>
