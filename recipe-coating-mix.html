@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmesan Garlic Breaded Coating Mix | Taylor's Food Adventures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Taylor's Food Adventures">
+<meta property="og:image" content="https://taylorsfoodadventures.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://taylorsfoodadventures.com/og-image.png">
+<style>
+  :root{--purple-darkest:#2D0057;--purple-dark:#4B0096;--purple-main:#7B00D4;--purple-bright:#9B30FF;--purple-light:#C47FFF;--purple-pale:#EDD6FF;--white:#FFFFFF;--text-light:#F5E6FF}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Nunito',sans-serif;background:var(--purple-darkest);color:var(--white);min-height:100vh;overflow-x:hidden}
+  nav{background:var(--purple-darkest);border-bottom:2px solid var(--purple-dark);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px}
+  .nav-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:8px}
+  .nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+  .nav-links a{font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;color:var(--purple-pale);text-decoration:none;padding:6px 14px;border-radius:99px;border:1.5px solid var(--purple-dark);transition:all 0.2s}
+  .nav-links a:hover,.nav-links a.active{background:var(--purple-bright);border-color:var(--purple-bright);color:var(--white)}
+  .recipe-hero{background:var(--purple-main);padding:48px 24px 40px;text-align:center;position:relative;overflow:hidden}
+  .recipe-hero::before{content:'';position:absolute;top:-60px;left:-60px;width:260px;height:260px;background:var(--purple-bright);border-radius:50%;opacity:0.15}
+  .recipe-hero::after{content:'';position:absolute;bottom:-80px;right:-40px;width:300px;height:300px;background:var(--purple-dark);border-radius:50%;opacity:0.25}
+  .recipe-hero-inner{position:relative;z-index:1;max-width:700px;margin:0 auto}
+  .recipe-badge{display:inline-block;background:var(--purple-bright);color:var(--white);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 16px;border-radius:99px;margin-bottom:16px}
+  .recipe-hero h1{font-family:'Fredoka',sans-serif;font-size:clamp(26px,5vw,42px);font-weight:600;color:var(--white);line-height:1.2;margin-bottom:8px}
+  .recipe-hero .subtitle{font-size:15px;color:var(--purple-pale);margin-bottom:24px}
+  .recipe-meta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .meta-pill{background:var(--purple-dark);border:1.5px solid var(--purple-bright);border-radius:99px;padding:7px 18px;font-size:13px;font-weight:700;color:var(--purple-pale)}
+  .recipe-wrap{max-width:860px;margin:40px auto 64px;padding:0 24px;display:grid;grid-template-columns:1fr 2fr;gap:28px}
+  .ingredients-card{background:var(--purple-dark);border:2px solid var(--purple-bright);border-radius:20px;padding:28px;height:fit-content;position:sticky;top:80px}
+  .card-title{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+  .ingredient-list{list-style:none}
+  .ingredient-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--purple-main);font-size:14px;color:var(--text-light);line-height:1.4}
+  .ingredient-item:last-child{border-bottom:none}
+  .ingredient-item::before{content:'💜';font-size:12px;margin-top:2px;flex-shrink:0}
+  .steps-card{background:var(--purple-dark);border:2px solid var(--purple-bright);border-radius:20px;padding:28px}
+  .how-to-use{background:var(--purple-main);border:2px solid var(--purple-bright);border-radius:20px;padding:28px;margin-top:28px}
+  .step{display:flex;gap:16px;margin-bottom:20px;align-items:flex-start}
+  .step:last-child{margin-bottom:0}
+  .step-num{background:var(--purple-bright);color:var(--white);font-family:'Fredoka',sans-serif;font-size:18px;font-weight:600;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+  .step-text{font-size:15px;color:var(--text-light);line-height:1.75}
+  .step-text strong{color:var(--white)}
+  .notes-card{max-width:860px;margin:0 auto 64px;padding:0 24px}
+  .notes-inner{background:var(--purple-bright);border:2px solid var(--white);border-radius:20px;padding:28px}
+  .notes-title{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--white);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .notes-list{list-style:none}
+  .notes-list li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.2);font-size:14px;color:var(--purple-pale);line-height:1.5}
+  .notes-list li:last-child{border-bottom:none}
+  .notes-list li::before{content:'⭐';font-size:14px;flex-shrink:0}
+  .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--purple-light);font-size:14px;font-weight:700;text-decoration:none;margin:0 0 20px 0;padding:0 24px}
+  .back-link:hover{color:var(--white)}
+  footer{background:var(--purple-darkest);border-top:3px solid var(--purple-dark);text-align:center;padding:36px 24px}
+  .footer-logo{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:10px}
+  .footer-text{font-size:13px;color:var(--purple-light);line-height:1.7}
+  @media(max-width:680px){nav{height:auto;flex-direction:column;padding:14px 16px}.nav-links{justify-content:center}.recipe-wrap{grid-template-columns:1fr}.ingredients-card{position:static}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><span>💜</span> Taylor's Food Adventures</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">Who Is Taylor?</a></li>
+    <li><a href="journal.html">Food Journal</a></li>
+    <li><a href="recipes.html" class="active">Recipes</a></li>
+    <li><a href="favorites.html">Favorites ⭐</a></li>
+    <li><a href="blog.html">Taylor's Blog</a></li>
+    <li><a href="vlogs.html">Taylor's Vlogs</a></li>
+  </ul>
+</nav>
+
+<div class="recipe-hero">
+  <div class="recipe-hero-inner">
+    <div class="recipe-badge">🧄 Taylor's Kitchen Staple!</div>
+    <h1>Parmesan Garlic Breaded Coating Mix</h1>
+    <p class="subtitle">Homemade Shake N' Bake — Extra Garlic, Extra Parm, Always 💜</p>
+    <div class="recipe-meta">
+      <div class="meta-pill">🧄 Garlic Parm Flavor</div>
+      <div class="meta-pill">🫙 Makes a Big Batch</div>
+      <div class="meta-pill">⏱️ 5 Minutes to Mix</div>
+      <div class="meta-pill">🥩 Use on Anything!</div>
+    </div>
+  </div>
+</div>
+
+<a href="recipes.html" class="back-link" style="display:block;margin-top:28px">← Back to Recipes</a>
+
+<div class="recipe-wrap">
+  <div class="ingredients-card">
+    <div class="card-title">🛒 Ingredients</div>
+    <ul class="ingredient-list">
+      <li class="ingredient-item">1 cup Italian Panko breadcrumbs</li>
+      <li class="ingredient-item">1 cup grated Parmesan cheese</li>
+      <li class="ingredient-item">1½ tbsp garlic powder</li>
+      <li class="ingredient-item">1½ tsp onion powder</li>
+      <li class="ingredient-item">½ tsp paprika (regular or smoked)</li>
+      <li class="ingredient-item">½ tsp salt</li>
+      <li class="ingredient-item">¼ tsp black pepper</li>
+      <li class="ingredient-item">1 pinch mustard powder</li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="steps-card">
+      <div class="card-title">👩‍🍳 How to Make the Mix</div>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Combine everything:</strong> Add all ingredients into a large zip-lock bag or a wide shallow bowl. Mix or shake well until everything is evenly combined.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Store it:</strong> Transfer to an airtight jar or container. Label it and keep it in the pantry. It stays fresh for <strong>several weeks!</strong></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Use it:</strong> Whenever you want crispy garlic parm anything — just coat your meat in olive oil or beaten egg, then shake it in the mix and cook!</div></div>
+    </div>
+
+    <div class="how-to-use">
+      <div class="card-title">🍽️ What to Use It On</div>
+      <div class="step"><div class="step-num">🥩</div><div class="step-text"><strong>Pork chops</strong> — Taylor's #1 favorite! Coat and air fry at 400°F for 12–15 min.</div></div>
+      <div class="step"><div class="step-num">🍗</div><div class="step-text"><strong>Chicken</strong> — Wings, breasts, tenders — garlic parm makes everything better.</div></div>
+      <div class="step"><div class="step-num">🍟</div><div class="step-text"><strong>French fries</strong> — Toss fries in a little oil, shake in the mix, bake or air fry.</div></div>
+      <div class="step"><div class="step-num">🐟</div><div class="step-text"><strong>Fish</strong> — Works great on flounder, catfish, or any mild white fish.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="notes-card">
+  <div class="notes-inner">
+    <div class="notes-title">💜 Tips from Taylor</div>
+    <ul class="notes-list">
+      <li>Make a big batch and store it in a jar — it saves so much time on weeknights!</li>
+      <li>The secret is the Parmesan — it melts into the crust and gives it that golden color.</li>
+      <li>Pat your meat dry before coating — this is the key to getting it really crispy.</li>
+      <li>Spray the tops with cooking spray before air frying for extra browning.</li>
+      <li>This mix is what makes Taylor's Parmesan Pork Chops so good — it's the base recipe!</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">💜 Taylor's Food Adventures</div>
+  <div class="footer-text">Made with love by Taylor and her friend Tim<br>taylorsfoodadventures.com</div>
+</footer>
+</body>
+</html>
