@@ -30,7 +30,7 @@
   .recipe-hero .subtitle{font-size:15px;color:var(--purple-pale);margin-bottom:24px}
   .recipe-meta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
   .meta-pill{background:var(--purple-dark);border:1.5px solid var(--purple-bright);border-radius:99px;padding:7px 18px;font-size:13px;font-weight:700;color:var(--purple-pale)}
-  .recipe-wrap{max-width:860px;margin:40px auto 64px;padding:0 24px;display:grid;grid-template-columns:1fr 2fr;gap:28px}
+  .recipe-photo-wrap{max-width:860px;margin:-32px auto 0;padding:0 24px 40px;position:relative;z-index:2}.recipe-photo{width:100%;max-height:420px;object-fit:cover;border-radius:20px;border:3px solid var(--purple-bright);display:block} .recipe-wrap{max-width:860px;margin:40px auto 64px;padding:0 24px;display:grid;grid-template-columns:1fr 2fr;gap:28px}
   .ingredients-card{background:var(--purple-dark);border:2px solid var(--purple-bright);border-radius:20px;padding:28px;height:fit-content;position:sticky;top:80px}
   .card-title{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:var(--purple-pale);margin-bottom:18px;display:flex;align-items:center;gap:8px}
   .ingredient-list{list-style:none}
@@ -87,7 +87,7 @@
   </div>
 </div>
 
-<a href="recipes.html" class="back-link" style="display:block;margin-top:28px">← Back to Recipes</a>
+<div class="recipe-photo-wrap"><img class="recipe-photo" src="https://res.cloudinary.com/dxzusulzi/image/upload/v1776556967/Parmesan_Garlic_Breading_Mix.jpg" alt="Parmesan Garlic Breaded Coating Mix" loading="lazy"></div><a href="recipes.html" class="back-link" style="display:block;margin-top:28px">← Back to Recipes</a>
 
 <div class="recipe-wrap">
   <div class="ingredients-card">
